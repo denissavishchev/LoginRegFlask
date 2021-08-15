@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+}
+
+a, u {
+    text-decoration: none;
+}
+
+body{
+    background: url("../img/bg.jpg") fixed center no-repeat;
+    height: 95vh;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contain{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60.5%;
+    left: 50%;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+label{
+    position: relative;
+    color: rgb(30, 30, 30);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 12px 25px;
+    margin: 30px;
+    align-items: center;
+    box-shadow: inset 10px 10px 20px 0px rgba(119, 119, 119, 0.3),
+                inset -10px -10px 20px 0px rgba(255, 255, 255, 0.8),
+                15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+input[type="radio"]:checked + label{
+    background-color: rgb(230, 230, 230);
+    color: rgb(255, 255, 255);
+}
+
+input[type="file"]{
+    display: none;
+}
+
+
+.search{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 72%;
+    left: 50%;
+}
+
+.form{
+    width: 420px;
+    height: 600px;
+    padding-top: 60px;
+    background-color: rgb(230, 230, 230);
+    border: rgb(255, 255, 255) 3px solid;
+    border-radius: 0px 50px 0px 50px;
+    box-shadow: 15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8),
+                inset 5px 5px 20px 5px rgba(119, 119, 119, 0.3),
+                inset -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+.form-reg{
+    width: 420px;
+    height: 720px;
+    padding-top: 10px;
+    background-color: rgb(230, 230, 230);
+    border: rgb(255, 255, 255) 3px solid;
+    border-radius: 0px 50px 0px 50px;
+    box-shadow: 15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8),
+                inset 5px 5px 20px 5px rgba(119, 119, 119, 0.3),
+                inset -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+}
+.top-text, .top-text-reg, .username, .password, .submit, .register{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+}
+
+
+
+.top-text{
+   font-size: 80px;
+}
+
+.top-text-reg{
+   font-size: 60px;
+}
+
+.username, .password{
+    font-size: 15px;
+    margin-top: 50px;
+    padding: 15px;
+    background-color: rgb(233, 231, 231);
+    width: 350px;
+    text-align: left;
+    border-radius: 30px;
+    border: solid 3px rgb(255, 255, 255);
+    box-shadow: inset 10px 10px 20px 0px rgba(119, 119, 119, 0.3),
+                inset -10px -10px 20px 0px rgba(255, 255, 255, 0.8),
+                15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+
+}
+
+.submit {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding 8px 15px;
+    margin-top: 15%;
+    background-color: rgb(233, 231 ,231);
+    transition: 0.5s;
+    border: solid 3px rgb(255, 255, 255, 0);
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    text-shadow; 0 0 1px rgb(68, 68, 68);
+}
+
+.submit:hover {
+    border: solid 3px rgb(255, 255, 255);
+    box-shadow: 15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+.submit-reg {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding 8px 15px;
+    margin-top: 59%;
+    margin-left: 40%;
+    background-color: rgb(233, 231 ,231);
+    transition: 0.5s;
+    border: solid 3px rgb(255, 255, 255, 0);
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    text-shadow; 0 0 1px rgb(68, 68, 68);
+}
+
+.submit-reg:hover {
+    border: solid 3px rgb(255, 255, 255);
+    box-shadow: 15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+}
+
+
+
+.register {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding 8px 15px;
+    margin-top: 50px;
+    background-color: rgb(233, 231 ,231);
+    transition: 0.5s;
+    border: solid 3px rgb(255, 255, 255, 0);
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    text-shadow; 0 0 1px rgb(68, 68, 68);
+}
+
+.register:hover {
+    border: solid 3px rgb(255, 255, 255);
+    box-shadow: 15px 15px 20px 5px rgba(119, 119, 119, 0.3),
+                -15px -15px 20px 5px rgba(255, 255, 255, 0.8);
+}
+

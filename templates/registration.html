@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Registration
+{% endblock %}
+
+{% block body %}
+
+    <div class="'container">
+
+        <form action="" class="form-reg" method="post">
+            <span class="top-text-reg" >Registration</span>
+            <input type="text" placeholder="Username" class="username" id="Username" name="Username">
+            <input type="text" placeholder="Email" class="username" id="Email" name="Email">
+            <div class="contain">
+                <input type="radio"  id="Male"  name="Male" value="Male" checked="checked">
+                <label for="Male">Male</label>
+                <input type="radio"  id="Female" name="Male" value="Female">
+                <label for="Female">Female</label>
+            </div>
+            <div class="search">
+                <input type="file" id="file" accept="image/*" name="File">
+                <label for="file">Load Photo</label>
+            </div>
+            <input type="password" placeholder="Password" class="password" name="Password" id="Password">
+            <input type="submit"  class="submit-reg" value="Submit">
+        </form>
+    </div>
+
+
+{% endblock %}
