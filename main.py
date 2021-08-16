@@ -1,12 +1,26 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, flash, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import urllib.request
+import os
+from werkzeug.utils import secure_filename
 
 main = Flask(__name__)
 main.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///devislab.db'
 main.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(main)
 
+UPLOAD_FOLDER = 'static/uploads/'
+
+main.secret_key = "secret key"
+main.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+main.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 class Registration(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -29,7 +43,17 @@ def index():
 
 @main.route('/registration', methods=['POST', 'GET'])
 def reg():
+
     if request.method == 'POST':
+        file = request.files['File']
+        if file and allowed_file(file.filename):
+            # filename = secure_filename(file.filename)
+            # file.filename = 'picture.png'
+            file.save(os.path.join(main.config['UPLOAD_FOLDER'], file.filename))
+            # # print('upload_image filename: ' + filename)
+            # flash('Image successfully uploaded and displayed below')
+            # return render_template('index.html', filename=filename)
+        photo = ('static/uploads/' + file.filename)
         username = request.form['Username']
         email = request.form['Email']
         password = request.form['Password']
@@ -42,16 +66,9 @@ def reg():
         else:
             male = False
             female = False
-        photo = request.form['File']
-        # file = request.files.getlist('File')
-        # if file:
-        #     photo = file[0].file.read()
-
-
 
         reg = Registration(username=username, email=email, password=password,
                            male=male, female=female, photo=photo)
-
         try:
             db.session.add(reg)
             db.session.commit()
