@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profil
+{% endblock %}
+
+{% block body %}
+    {% for el in prof %}
+    <div class="'container">
+
+        <form action="" class="form-prof">
+
+            <img src="../static/img/1.jpg" class="avatar" width="150" >
+            <span class="other">Username: {{ el.username }}</span>
+            <span class="other">Email: {{ el.email }}</span>
+                {% if el.male is sameas true %}
+                    <span class="other">Gender: Male</span>
+                {% elif el.female is sameas true %}
+                    <span class="other">Gender: Female</span>
+                {% endif %}
+            <a href="/">
+            <input type="button"  class="register" value="Logout"></a>
+        </form>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}
+

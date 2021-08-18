@@ -79,6 +79,11 @@ def reg():
     else:
         return render_template('registration.html')
 
+@main.route('/prof')
+def prof():
+    prof = Registration.query.all()
+    return render_template('prof.html', prof=prof)
+
 
 # @main.route('/completeRegistration')
 # def completeRegistration():
